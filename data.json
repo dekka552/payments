@@ -1,0 +1,7 @@
+[
+    { "category": "Мобильная связь", "amount": 500 },
+    { "category": "Интернет", "amount": 552 },
+    { "category": "Транспорт", "amount": 100 },
+    { "category": "Развлечения", "amount": 150 },
+    { "category": "Прочее", "amount": 80 }
+]
