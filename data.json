@@ -1,7 +1,5 @@
 [
-    { "category": "Мобильная связь", "amount": 500 },
+    { "category": "Мобильная связь", "amount": 2 355,15 руб. },
     { "category": "Интернет", "amount": 552 },
-    { "category": "Транспорт", "amount": 100 },
-    { "category": "Развлечения", "amount": 150 },
-    { "category": "Прочее", "amount": 80 }
+ 
 ]
