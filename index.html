@@ -1,1 +1,102 @@
 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Месячные траты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 60%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tfoot td {
+            font-weight: bold;
+            background-color: #eee;
+        }
+        input {
+            width: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Месячные траты</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Категория</th>
+            <th>Сумма (€)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Жильё</td>
+            <td><input type="number" value="500" oninput="calculateTotal()"></td>
+        </tr>
+        <tr>
+            <td>Еда</td>
+            <td><input type="number" value="300" oninput="calculateTotal()"></td>
+        </tr>
+        <tr>
+            <td>Транспорт</td>
+            <td><input type="number" value="100" oninput="calculateTotal()"></td>
+        </tr>
+        <tr>
+            <td>Развлечения</td>
+            <td><input type="number" value="150" oninput="calculateTotal()"></td>
+        </tr>
+        <tr>
+            <td>Прочее</td>
+            <td><input type="number" value="80" oninput="calculateTotal()"></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Итого</td>
+            <td id="total">0</td>
+        </tr>
+    </tfoot>
+</table>
+
+<script>
+function calculateTotal() {
+    const inputs = document.querySelectorAll('tbody input');
+    let sum = 0;
+
+    inputs.forEach(input => {
+        const value = parseFloat(input.value);
+        if (!isNaN(value)) {
+            sum += value;
+        }
+    });
+
+    document.getElementById('total').textContent = sum.toFixed(2);
+}
+
+// посчитать сразу при загрузке
+calculateTotal();
+</script>
+
+</body>
+</html>
